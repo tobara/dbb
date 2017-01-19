@@ -1,0 +1,14 @@
+<%= form_for @bourbon do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :proof %>
+  <%= f.text_field :proof %>
+  <%= f.label :distillery %>
+  <%= f.text_field :distillery %>
+
+  <% if @bourbon.persisted? %>
+    <%= f.submit "Update Bourbon", class: "button small" %>
+  <% else %>
+    <%= f.submit "Add Bourbon", class: "button small" %>
+  <% end %>
+<% end %>

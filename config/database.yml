@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: drink-better-bourbon_development
+
+
+test:
+  <<: *default
+  database: drink-better-bourbon_test
+production:
+  <<: *default
+  database: drink-better-bourbon_production
+  username: drink-better-bourbon
+  password: <%= ENV['DRINK-BETTER-BOURBON_DATABASE_PASSWORD'] %>
